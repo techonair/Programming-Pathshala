@@ -11,17 +11,6 @@ k_count = 0
 for i in range(n):
     if arr[i] <= k:
         k_count += 1
-"""
-if n > 2:
-    for i in range(0, n-k_count+1):
-        count = 0
-        if arr[i] <= k:
-            count += 1
-        if i != i+k_count-1 and arr[i+k_count-1] <= k:
-            count += 1
-        
-        swap = max(swap, count)
-"""
 
 for i in range(0, n-k_count+1):
     count = 0
