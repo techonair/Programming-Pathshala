@@ -1,3 +1,5 @@
+# Problem: https://www.geeksforgeeks.org/sum-of-all-submatrices-of-a-given-matrix/
+
 arr = [[ 1, 1, 1 ], [ 1, 1, 1 ], [ 1, 1, 1 ]]
 
 n = len(arr)

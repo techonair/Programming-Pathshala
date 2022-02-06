@@ -1,51 +1,35 @@
-#["Matrix", "sumRegion", "sumRegion", "sumRegion"]
+class NumMatrix:
 
-matrix= [[3, 0, 1, 4, 2], 
-         [5, 6, 3, 2, 1],
-         [1, 2, 0, 1, 5],
-         [4, 1, 0, 1, 7],
-         [1, 0, 3, 0, 5]] 
-'''
-matrix = [[1, -3],
-          [-4, 9]] '''
+    def __init__(self, matrix):
+        self.matrix = matrix
+        row = len(matrix)
+        col = len(matrix[0])
 
-row1 = 1
-col1 = 2
-row2 = 2
-col2 = 4
+        for i in range(row):
+            for j in range(1, col):
+                self.matrix[i][j] += matrix[i][j-1]
 
-# Prefix Sum of Matrix
+        for i in range(1, row):
+            for j in range(col):
+                matrix[i][j] += matrix[i-1][j]
 
-row = len(matrix)
-col = len(matrix[0])
+    def sumRegion(self, row1, col1, row2, col2):
+        area0 = self.matrix[row2][col2]
 
-for i in range(row):
-    for j in range(1, col):
-        matrix[i][j] += matrix[i][j-1]
+        area1 = 0
+        if row1 - 1 >= 0:
+            area1 = self.matrix[row1-1][col2]
 
-for i in range(1, row):
-    for j in range(col):
-        matrix[i][j] += matrix[i-1][j]
+        area2 = 0
+        if col1 -1 >= 0:
+            area2 = self.matrix[row2][col1-1]
 
-# Answer: (area0 - area1 - area2 + common_area)
-# Edge cases exists: handled with if statements
+        common_area = 0
+        if area1 != 0 and area2 != 0:
+            common_area = self.matrix[row1-1][col1-1]
 
-area0 = matrix[row2][col2]
+        ans = area0 - area1 - area2 + common_area
+        
+        return ans
 
-area1 = 0
-if row1 - 1 >= 0:
-    area1 = matrix[row1-1][col2]
-
-area2 = 0
-if col1 -1 >= 0:
-    area2 = matrix[row2][col1-1]
-
-common_area = 0
-if area1 != 0 and area2 != 0:
-    common_area = matrix[row1-1][col1-1]
-
-ans = area0 - area1 - area2 + common_area
-
-print(matrix)
-print(area0, area1, area2, common_area)
-print(ans)
+NumMatrix([[[[3, 0, 1, 4, 2], [5, 6, 3, 2, 1], [1, 2, 0, 1, 5], [4, 1, 0, 1, 7], [1, 0, 3, 0, 5]]], [2, 1, 4, 3], [1, 1, 2, 2], [1, 2, 2, 4]])
