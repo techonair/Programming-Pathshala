@@ -1,7 +1,7 @@
 # Problem: https://leetcode.com/problems/count-primes/
 
 # Method1: 
-# Time Complexity: O( N(sqrt(N)) ), Space Complexity: O(1)
+# Time Complexity: O( N*sqrt(N) ), Space Complexity: O(1)
 """
 from cmath import sqrt
 
@@ -22,7 +22,7 @@ print(ans)
 """
 
 # Method 2: 
-# Time Complexity: O(Nlog(logN)), Space Complexity: O(N)
+# Time Complexity: O(N*log(logN)), Space Complexity: O(N)
 
 n = int(input())
 isPrime = [True]*n
@@ -37,7 +37,7 @@ for i in range(2,n):
 
 print(cnt)
 
-# Same as Method 2 just a little faster
+# Same as Method 2 just a little faster but memory consumption is almost O(2N)
 """
 n = int(input())
 isPrime = [True]*n
