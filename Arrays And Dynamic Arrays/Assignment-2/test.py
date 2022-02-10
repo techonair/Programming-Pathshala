@@ -11,7 +11,7 @@ class NumMatrix:
 
         for i in range(1, row):
             for j in range(col):
-                matrix[i][j] += matrix[i-1][j]
+                self.matrix[i][j] += self.matrix[i-1][j]
 
     def sumRegion(self, row1, col1, row2, col2):
         area0 = self.matrix[row2][col2]
@@ -32,4 +32,3 @@ class NumMatrix:
         
         return ans
 
-NumMatrix([[[[3, 0, 1, 4, 2], [5, 6, 3, 2, 1], [1, 2, 0, 1, 5], [4, 1, 0, 1, 7], [1, 0, 3, 0, 5]]], [2, 1, 4, 3], [1, 1, 2, 2], [1, 2, 2, 4]])
