@@ -31,6 +31,7 @@ isPrime[1] = False
 cnt = 0
 for i in range(2,n):
     if isPrime[i] == True:
+        print(i)
         cnt += 1
         for j in range(i*i,n,i):
             isPrime[j] = False
