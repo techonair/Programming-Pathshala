@@ -12,6 +12,7 @@ for i in range(2,n+1):
             if spf[j] == -1:
                 spf[j] = i
 
+# little bit of problem here
 print(spf[0:26])
 for i in range(t):
     num = q[i]
