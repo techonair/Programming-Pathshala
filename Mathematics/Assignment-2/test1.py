@@ -4,11 +4,12 @@ for i in range(t):
     q.append(int(input()))
 
 n = 10**6
-spf = [-1]*(n+1)
+spf = [-1]*(n+1) # Smallest Prime Factor
 
 for i in range(2,n+1):
     if spf[i] == -1:
         for j in range(i**2, n+1, i):
+            # storing the lowest prime that divides num n in power array
             if spf[j] == -1:
                 spf[j] = i
 
