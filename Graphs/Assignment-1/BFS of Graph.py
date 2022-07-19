@@ -25,3 +25,8 @@ class Solution:
                     visited[num] = 1
                     
         return ans
+
+"""
+Time Complexity = O(V*E) as we are visiting each node and edge only constant times
+Space Complexity = O(V*E) as in worst case we will be store all vertices and edges 
+"""
